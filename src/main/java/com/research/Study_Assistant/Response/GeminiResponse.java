@@ -9,17 +9,20 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class GeminiResponse {
 
-    private List<Candidate> candidates;
-
-    private static class Candidate {
+    public List<Candidate> candidates;
+    @Data
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class Candidate {
         private Content content;
     }
-
-    private static class Content {
+    @Data
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class Content {
         private List<Part> parts;
     }
-
-    private static class Part {
+    @Data
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class Part {
         private String text;
     }
 }
