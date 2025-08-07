@@ -15,7 +15,7 @@ public class StudyAssistantController {
 
     @PostMapping("/process")
     public ResponseEntity<String> processContent(@RequestBody StudyAssistantRequest studyAssistantRequest) {
-        String reslut = studyAssistantRequest.processContent(request);
+        String reslut = studyAssistantService.processContent(studyAssistantRequest);
         return ResponseEntity.ok(reslut);
     }
 
