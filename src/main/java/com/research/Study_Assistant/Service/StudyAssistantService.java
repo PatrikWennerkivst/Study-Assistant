@@ -43,11 +43,17 @@ public class StudyAssistantService {
                 .bodyToMono(String.class)
                 .block();
 
+        return  extractTextFromResponse(response);
+    }
 
-        // Parse the response
+    // Parse the response
+    // Return response
+    private String extractTextFromResponse(String response){
+        try {
 
-
-        // Return response
+        } catch (Exception e) {
+            return "Errosr Parsing: " + e.getMessage();
+        }
     }
 
     private String buildPrompt(StudyAssistantRequest studyAssistantRequest) {
